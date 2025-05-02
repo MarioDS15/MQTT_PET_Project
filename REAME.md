@@ -1,0 +1,85 @@
+
+# MQTT-Based Disaster Relief System
+
+This github repo simulates how MQTT communications would take place in a disaster envioronment. It includes a publisher that broadcasts private data to a subscriber. It includes another publisher with privacy-enhancing technologies (PETs) such as tokenization and optional payload encryption, which the subscriber is able to decrypt.
+---
+
+## Tools Used
+
+| Tool              | Purpose                                      |
+|------------------|----------------------------------------------|
+| Python 3         | Primary programming language                 |
+| Paho-MQTT        | Python MQTT client library for pub/sub       |
+| Eclipse Mosquitto| MQTT Broker for message routing              |
+| cryptography     | Fernet encryption for message confidentiality|
+| Homebrew (macOS) | Installing Mosquitto broker                  |
+
+---
+
+## Installation Guide
+
+### 1. Install Python (if not already installed)
+Download Python from: https://www.python.org/downloads/
+
+### 2. Clone this repository
+```bash
+git clone https://github.com/hzainal/cyse587extra
+cd mqtt-disaster-relief
+```
+
+### 3. Install required Python packages
+```bash
+pip install -r requirements.txt
+```
+
+
+### 4. Install Mosquitto MQTT broker
+
+#### macOS:
+```bash
+brew install mosquitto
+brew services start mosquitto
+```
+
+
+---
+
+## How to Run the Scenario
+
+### Step 1: Start the Mosquitto broker
+Ensure Mosquitto is running locally on port 1883:
+```bash
+mosquitto
+```
+
+### Step 2: Run the Subscriber
+In a new terminal:
+```bash
+cd subscriber
+python3 mqtt_subscribe.py
+```
+
+### Step 3: Run the Publisher
+In another terminal:
+```bash
+cd publisher
+python3 mqtt_publish.py
+```
+
+The publisher sends pseudonymized and optionally encrypted messages to the subscriber over MQTT.
+
+---
+
+## 📊 Interpreting the Results
+
+- **Before PETs**: Messages contained data such as the victims GPS coordinates in plaintext
+- **After PETs**: Messages use tokenized victim IDs, location zones instead of raw GPS, and can be encrypted using Fernet.
+- The improvement is measured using a **Sensitive Field Exposure Metric**:
+  - **Before**: 5 sensitive fields exposed (Victim ID, GPS, IP, Temp, Severity)
+  - **After**: Only 2 exposed (Temp, Severity) — IDs and location are anonymized/encrypted
+
+This shows a measurable privacy improvement and supports threat mitigation for linkability, identifiability, and disclosure.
+---
+
+
+
