@@ -1,7 +1,7 @@
 
 # MQTT-Based Disaster Relief System
 
-This github repo simulates how MQTT communications would take place in a disaster envioronment. It includes a publisher that broadcasts private data to a subscriber. It includes another publisher with privacy-enhancing technologies (PETs) such as tokenization and optional payload encryption, which the subscriber is able to decrypt.
+This GitHub repo simulates how MQTT communications would take place in a disaster environment. It includes a publisher that broadcasts private data to a subscriber and another publisher with privacy-enhancing technologies (PETs) such as tokenization and optional payload encryption, which the subscriber can decrypt.
 ---
 
 ## Tools Used
@@ -70,13 +70,13 @@ The publisher sends pseudonymized and optionally encrypted messages to the subsc
 
 ---
 
-## 📊 Interpreting the Results
+## Interpreting the Results
 
-- **Before PETs**: Messages contained data such as the victims GPS coordinates in plaintext
-- **After PETs**: Messages use tokenized victim IDs, location zones instead of raw GPS, and can be encrypted using Fernet.
+- **Before PETs**: Messages contained data such as the victim's GPS coordinates in plaintext
+- **After PETs**: Messages use tokenized victim IDs and location zones instead of raw GPS and can be encrypted using Fernet.
 - The improvement is measured using a **Sensitive Field Exposure Metric**:
   - **Before**: 5 sensitive fields exposed (Victim ID, GPS, IP, Temp, Severity)
-  - **After**: Only 2 exposed (Temp, Severity) — IDs and location are anonymized/encrypted
+  - **After**: Only two exposed (Temp, Severity) — IDs and location are anonymized/encrypted
 
 This shows a measurable privacy improvement and supports threat mitigation for linkability, identifiability, and disclosure.
 ---
