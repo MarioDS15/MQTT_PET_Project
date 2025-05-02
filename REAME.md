@@ -70,7 +70,7 @@ All messages from the publisher have no PETs
 
 ### Step 4: Stop the Publisher execution
 
-### Step 5: Run the Publisher
+### Step 5: Run the PET Publisher
 In another terminal:
 ```bash
 cd publisher
