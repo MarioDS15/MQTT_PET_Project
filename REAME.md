@@ -56,14 +56,25 @@ mosquitto
 In a new terminal:
 ```bash
 cd subscriber
-python3 mqtt_subscribe.py
+python3 subscriber.py
 ```
 
 ### Step 3: Run the Publisher
 In another terminal:
 ```bash
 cd publisher
-python3 mqtt_publish.py
+python3 publisher.py
+```
+
+All messages from the publisher have no PETs
+
+### Step 4: Stop the Publisher execution
+
+### Step 5: Run the Publisher
+In another terminal:
+```bash
+cd publisher
+python3 publisherPET.py
 ```
 
 The publisher sends pseudonymized and optionally encrypted messages to the subscriber over MQTT.
