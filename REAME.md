@@ -92,5 +92,5 @@ The publisher sends pseudonymized and optionally encrypted messages to the subsc
 This shows a measurable privacy improvement and supports threat mitigation for linkability, identifiability, and disclosure.
 ---
 
-
+Code Adapter from specific files in https://github.com/kabartsjc/disaster_project/tree/main
 
