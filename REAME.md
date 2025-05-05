@@ -24,7 +24,6 @@ Download Python from: https://www.python.org/downloads/
 ### 2. Clone this repository
 ```bash
 git clone https://github.com/hzainal/cyse587extra
-cd mqtt-disaster-relief
 ```
 
 ### 3. Install required Python packages
